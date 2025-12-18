@@ -313,7 +313,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-white flex flex-col items-stretch p-2 md:p-4 overflow-hidden select-none touch-none">
+    <div className="fixed inset-0 bg-white flex flex-col items-stretch p-1 md:p-4 overflow-hidden select-none touch-none">
       {feedback && (
         <div className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none animate-in fade-in slide-in-from-top duration-300">
           <div className="bg-gray-900 text-white px-6 py-2 rounded-full shadow-2xl text-lg font-medium flex gap-4 uppercase tracking-widest">
@@ -323,7 +323,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <div className="h-16 flex items-center justify-between px-2 md:px-4 border-b border-gray-100 shrink-0">
+      <div className="h-12 md:h-16 flex items-center justify-between px-2 md:px-4 border-b border-gray-100 shrink-0">
         <button 
           onClick={togglePlay}
           className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors ${global.isPlaying ? 'bg-red-50' : 'bg-gray-50'}`}
@@ -365,7 +365,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mt-2 md:mt-4 overflow-hidden mb-2">
+      <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-1 md:gap-4 mt-1 md:mt-4 overflow-hidden mb-1">
         {tracks.map((track, i) => (
           <TrackCard 
             key={track.id}
