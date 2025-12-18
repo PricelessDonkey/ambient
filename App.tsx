@@ -323,10 +323,10 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <div className="h-10 md:h-16 flex items-center justify-between px-1 md:px-4 border-b border-gray-100 shrink-0">
+      <div className="h-8 md:h-16 flex items-center justify-between px-1 md:px-4 border-b border-gray-100 shrink-0">
         <button
           onClick={togglePlay}
-          className={`w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors ${global.isPlaying ? 'bg-red-50' : 'bg-gray-50'}`}
+          className={`w-7 h-7 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors ${global.isPlaying ? 'bg-red-50' : 'bg-gray-50'}`}
         >
           {global.isPlaying ? (
              <svg className="w-4 h-4 md:w-6 md:h-6 text-red-500 fill-current" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>

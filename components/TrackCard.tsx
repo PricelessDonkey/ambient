@@ -22,13 +22,13 @@ const TrackCard: React.FC<TrackCardProps> = ({ track, index, onUpdateTrack, onSl
   };
 
   return (
-    <div className="flex flex-col gap-0.5 p-1 md:p-2 border border-gray-100 rounded-lg md:rounded-2xl bg-gray-50/30 overflow-hidden relative h-full">
+    <div className="flex flex-col p-0.5 md:p-2 border border-gray-100 rounded-lg md:rounded-2xl bg-gray-50/30 overflow-hidden relative h-full">
       {/* Track Header: Status and Toggles */}
-      <div className="flex items-center justify-between px-0.5 mb-0.5">
+      <div className="flex items-center justify-between px-0.5">
         <div className="flex items-center gap-1">
            <button
             onClick={() => setViewMode(viewMode === 'sequencer' ? 'config' : 'sequencer')}
-            className={`px-1.5 md:px-3 h-6 md:h-8 rounded-full text-[7px] md:text-[10px] font-bold transition-all border shadow-sm ${viewMode === 'config' ? 'bg-gray-800 text-white border-gray-800' : 'bg-white text-gray-500 border-gray-200'}`}
+            className={`px-1 md:px-3 h-5 md:h-8 rounded-full text-[6px] md:text-[10px] font-bold transition-all border shadow-sm ${viewMode === 'config' ? 'bg-gray-800 text-white border-gray-800' : 'bg-white text-gray-500 border-gray-200'}`}
           >
             {viewMode === 'sequencer' ? 'CONFIG' : 'STEPS'}
           </button>
@@ -41,7 +41,7 @@ const TrackCard: React.FC<TrackCardProps> = ({ track, index, onUpdateTrack, onSl
               onUpdateTrack(track.id, { soloed: newSolo });
               onSliderChange('SOLO', newSolo ? 'ON' : 'OFF');
             }}
-            className={`w-6 h-6 md:w-8 md:h-8 rounded-full text-[7px] md:text-[10px] font-bold transition-colors border shadow-sm ${track.soloed ? 'bg-amber-400 border-amber-500 text-white' : 'bg-white border-gray-200 text-gray-400'}`}
+            className={`w-5 h-5 md:w-8 md:h-8 rounded-full text-[6px] md:text-[10px] font-bold transition-colors border shadow-sm ${track.soloed ? 'bg-amber-400 border-amber-500 text-white' : 'bg-white border-gray-200 text-gray-400'}`}
           >
             S
           </button>
@@ -51,7 +51,7 @@ const TrackCard: React.FC<TrackCardProps> = ({ track, index, onUpdateTrack, onSl
               onUpdateTrack(track.id, { muted: newMuted });
               onSliderChange('MUTE', newMuted ? 'ON' : 'OFF');
             }}
-            className={`w-6 h-6 md:w-8 md:h-8 rounded-full text-[7px] md:text-[10px] font-bold transition-colors border shadow-sm ${track.muted ? 'bg-red-500 border-red-600 text-white' : 'bg-white border-gray-200 text-gray-400'}`}
+            className={`w-5 h-5 md:w-8 md:h-8 rounded-full text-[6px] md:text-[10px] font-bold transition-colors border shadow-sm ${track.muted ? 'bg-red-500 border-red-600 text-white' : 'bg-white border-gray-200 text-gray-400'}`}
           >
             M
           </button>
@@ -73,7 +73,7 @@ const TrackCard: React.FC<TrackCardProps> = ({ track, index, onUpdateTrack, onSl
                 onUpdateTrack(track.id, { steps: newSteps });
               }}
             />
-            <div className="mt-1 md:mt-4 px-0.5 space-y-1 md:space-y-2">
+            <div className="mt-0.5 md:mt-4 px-0.5 space-y-0.5 md:space-y-2">
                 <input 
                   type="range" min="2" max="16" step="1"
                   value={track.stepLength}
@@ -97,8 +97,8 @@ const TrackCard: React.FC<TrackCardProps> = ({ track, index, onUpdateTrack, onSl
             </div>
           </div>
         ) : (
-          <div className="h-full flex flex-col gap-1 md:gap-3 py-0.5 px-0.5 overflow-y-auto no-scrollbar animate-in fade-in slide-in-from-right-4 duration-200">
-            <div className="flex flex-col gap-1.5 md:gap-4 pb-2">
+          <div className="h-full flex flex-col py-0.5 px-0.5 overflow-y-auto no-scrollbar animate-in fade-in slide-in-from-right-4 duration-200">
+            <div className="flex flex-col gap-0.5 md:gap-4 pb-1">
                 <input 
                   type="range" min="0" max="1" step="0.01"
                   value={track.lfo.rate}
