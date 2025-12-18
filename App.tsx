@@ -323,19 +323,19 @@ const App: React.FC = () => {
         </div>
       )}
 
-      <div className="h-12 md:h-16 flex items-center justify-between px-2 md:px-4 border-b border-gray-100 shrink-0">
-        <button 
+      <div className="h-10 md:h-16 flex items-center justify-between px-1 md:px-4 border-b border-gray-100 shrink-0">
+        <button
           onClick={togglePlay}
-          className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors ${global.isPlaying ? 'bg-red-50' : 'bg-gray-50'}`}
+          className={`w-8 h-8 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors ${global.isPlaying ? 'bg-red-50' : 'bg-gray-50'}`}
         >
           {global.isPlaying ? (
-             <svg className="w-5 h-5 md:w-6 md:h-6 text-red-500 fill-current" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+             <svg className="w-4 h-4 md:w-6 md:h-6 text-red-500 fill-current" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
           ) : (
-             <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-500 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+             <svg className="w-4 h-4 md:w-6 md:h-6 text-blue-500 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           )}
         </button>
-        
-        <div className="flex-1 flex gap-4 md:gap-8 px-4 md:px-8 items-center">
+
+        <div className="flex-1 flex gap-2 md:gap-8 px-2 md:px-8 items-center">
             <div className="flex-1">
                  <input 
                     type="range" 
@@ -365,9 +365,9 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-1 md:gap-4 mt-1 md:mt-4 overflow-hidden mb-1">
+      <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-0.5 md:gap-4 pt-0.5 md:pt-4 overflow-hidden">
         {tracks.map((track, i) => (
-          <TrackCard 
+          <TrackCard
             key={track.id}
             track={track}
             index={i}
@@ -375,10 +375,6 @@ const App: React.FC = () => {
             onSliderChange={handleSliderChange}
           />
         ))}
-      </div>
-
-      <div className="h-6 flex items-center justify-center text-[8px] md:text-[10px] uppercase tracking-widest text-gray-300 pointer-events-none font-bold shrink-0">
-        Ambient Dub Looper &middot; A Minor
       </div>
     </div>
   );
