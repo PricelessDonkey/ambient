@@ -1,0 +1,6 @@
+
+{
+  "name": "Ambient Dub Looper",
+  "description": "A 4-track generative ambient dub sequencer featuring LFO-driven modulation, polymetric tracks, and a minimal mobile-first UI.",
+  "requestFramePermissions": []
+}

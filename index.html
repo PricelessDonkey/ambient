@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ambient Dub Looper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+        }
+        #root {
+            height: 100%;
+            width: 100%;
+        }
+        /* Custom slider styles to hide default appearance and make it clean */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            background: #f3f4f6;
+            height: 20px;
+            border-radius: 10px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px; 
+            background-color: #374151;
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        /* Color themes for tracks */
+        .track-1-thumb::-webkit-slider-thumb { background-color: #3b82f6; } /* Blue */
+        .track-2-thumb::-webkit-slider-thumb { background-color: #10b981; } /* Green */
+        .track-3-thumb::-webkit-slider-thumb { background-color: #f59e0b; } /* Orange */
+        .track-4-thumb::-webkit-slider-thumb { background-color: #8b5cf6; } /* Purple */
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "tone": "https://esm.sh/tone@^15.1.22"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
